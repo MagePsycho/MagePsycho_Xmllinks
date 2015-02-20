@@ -1,0 +1,5 @@
+# MagePsycho_Xmllinks 0.2.0
+app/etc/modules/MagePsycho_Xmllinks.xml app/etc/modules/MagePsycho_Xmllinks.xml
+app/code/local/MagePsycho/Xmllinks/   app/code/local/MagePsycho/Xmllinks/
+app/design/frontend/default/default/layout/xmllinks.xml app/design/frontend/default/default/layout/xmllinks.xml
+app/design/frontend/default/default/template/xmllinks/  app/design/frontend/default/default/template/xmllinks/

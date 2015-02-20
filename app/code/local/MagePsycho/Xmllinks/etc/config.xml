@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MagePsycho
+ * @package    MagePsycho_Xmllinks
+ * @author     magepsycho@gmail.com
+ * @website    http://www.magepsycho.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config>
+    <modules>
+        <MagePsycho_Xmllinks>
+            <version>0.2.0</version>
+        </MagePsycho_Xmllinks>
+    </modules>
+    <global>
+        <models>
+            <xmllinks>
+                <class>MagePsycho_Xmllinks_Model</class>
+            </xmllinks>
+        </models>
+        <blocks>
+            <xmllinks>
+                <class>MagePsycho_Xmllinks_Block</class>
+            </xmllinks>
+			<customer>
+                <rewrite>
+                    <account_navigation>MagePsycho_Xmllinks_Block_Account_Navigation</account_navigation>
+                </rewrite>
+            </customer>
+        </blocks>
+        <helpers>
+            <xmllinks>
+                <class>MagePsycho_Xmllinks_Helper</class>
+            </xmllinks>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <xmllinks>
+                <use>standard</use>
+                <args>
+                    <module>MagePsycho_Xmllinks</module>
+                    <frontName>xmllinks</frontName>
+                </args>
+            </xmllinks>
+        </routers>
+		<layout>
+			<updates>
+				<xmllinks>
+					<file>xmllinks.xml</file>
+				</xmllinks>
+			</updates>
+		</layout>
+    </frontend>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <magepychoinfo>
+											<title>MagePsycho - Information</title>
+										</magepychoinfo>
+                                        <xmllinks>
+                                            <title>Xml Links Manager Section</title>
+                                        </xmllinks>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <default>
+        <xmllinks>
+            <option>
+                <active>1</active>
+				<enable_log>1</enable_log>
+            </option>
+			<top_links>
+				<my_account>0</my_account>
+				<my_wishlist>0</my_wishlist>
+				<my_cart>0</my_cart>
+				<checkout>0</checkout>
+				<login>0</login>
+			</top_links>
+			<footer_links>
+				<static_block_links>0</static_block_links>
+				<sitemap>0</sitemap>
+				<search_terms>0</search_terms>
+				<advanced_search>0</advanced_search>
+				<contact_us>0</contact_us>
+			</footer_links>
+			<customer_navigation>
+				<account_dashboard>0</account_dashboard>
+				<account_information>0</account_information>
+				<address_book>0</address_book>
+				<my_orders>0</my_orders>
+				<billing_agreements>0</billing_agreements>
+				<recurring_profiles>0</recurring_profiles>
+				<my_product_reviews>0</my_product_reviews>
+				<my_tags>0</my_tags>
+				<my_wishlist>0</my_wishlist>
+				<my_applications>0</my_applications>
+				<my_downloadable_products>0</my_downloadable_products>
+				<newsletter_subscriptions>0</newsletter_subscriptions>
+				<logout>0</logout>
+				<store_credit>0</store_credit>
+				<gift_card>0</gift_card>
+				<gift_registry>0</gift_registry>
+				<reward_points>0</reward_points>
+				<my_invitations>0</my_invitations>
+			</customer_navigation>
+			<catalog_navigation>
+                <home_active>0</home_active>
+                <home_label>Home</home_label>
+            </catalog_navigation>
+        </xmllinks>
+    </default>
+</config>

@@ -1,0 +1,34 @@
+<?php
+/**
+ * Top menu for store
+ *
+ * @see Mage_Catalog_Block_Navigation
+ */
+?>
+<?php
+/**
+ * $this->renderCategoriesMenuHtml() supports optional arguments:
+ * int Level number for list item class to start from
+ * string Extra class of outermost list items
+ * string If specified wraps children list in div with this class
+ */
+$helper = Mage::helper('xmllinks');
+?>
+<?php $_menu = $this->renderCategoriesMenuHtml(0,'level-top') ?>
+<?php if($_menu): ?>
+<div class="nav-container">
+    <ul id="nav">
+		<?php if($helper->getConfig('home_active', 'catalog_navigation')):
+			$homeLabel = $helper->getConfig('home_label', 'catalog_navigation', 'Home');
+			$isHomeActive = trim($this->helper('core/url')->getCurrentUrl(), '/') == trim(Mage::getUrl(), '/') ? ' active' : null;
+			?>
+		<li class="first<?php echo $isHomeActive; ?>">
+			<a href="<?php echo Mage::getUrl(); ?>" class="">
+				<span><?php echo $homeLabel; ?></span>
+			</a>
+		</li>
+		<?php endif; ?>
+        <?php echo $_menu ?>
+    </ul>
+</div>
+<?php endif ?>

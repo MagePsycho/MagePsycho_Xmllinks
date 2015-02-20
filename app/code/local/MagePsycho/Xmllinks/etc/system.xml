@@ -1,0 +1,408 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   MagePsycho
+ * @package    MagePsycho_Xmllinks
+ * @author     magepsycho@gmail.com
+ * @website    http://www.magepsycho.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+ -->
+<config>
+    <tabs>
+        <magepychoall translate="label" module="xmllinks">
+            <label>MagePsycho Extensions</label>
+            <sort_order>400</sort_order>
+        </magepychoall>
+    </tabs>
+    <sections>
+        <magepychoinfo translate="label" module="xmllinks">
+			<label>Info</label>
+			<tab>magepychoall</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>99999999999</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+                <info>
+                    <frontend_model>xmllinks/system_config_info</frontend_model>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </info>
+			</groups>
+		</magepychoinfo>
+
+        <xmllinks module="xmllinks">
+            <label>Frontend Links Manager</label>
+            <tab>magepychoall</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <option translate="label">
+                    <label>General Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+                    </fields>
+                </option>
+				<top_links translate="label">
+                    <label>Top Links</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <my_account translate="label">
+                            <label>My Account</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </my_account>
+						<my_wishlist translate="label">
+                            <label>My Wishlist</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </my_wishlist>
+						<my_cart translate="label">
+                            <label>My Cart</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </my_cart>
+						<checkout translate="label">
+                            <label>Checkout</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </checkout>
+						<login translate="label">
+                            <label>Login / Logout</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </login>
+                    </fields>
+                </top_links>
+				<footer_links translate="label">
+                    <label>Footer Links</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <static_block_links translate="label">
+                            <label>Static Block Links</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<tooltip><![CDATA[Enabling this option will remove the footer links defined in static block with identifier: footer_links.<br /> Ref: About Us | Customer Service | Privacy Policy]]></tooltip>
+                        </static_block_links>
+						<sitemap translate="label">
+                            <label>Sitemap</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sitemap>
+						<search_terms translate="label">
+                            <label>Search Terms</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </search_terms>
+						<advanced_search translate="label">
+                            <label>Advanced Search</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </advanced_search>
+						<return_link translate="label">
+                            <label>Orders and Returns</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </return_link>
+						<contact_us translate="label">
+                            <label>Contact Us</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </contact_us>
+						<rss translate="label">
+                            <label>RSS</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<tooltip><![CDATA[This will only work if you have enabled RSS option from:  System > Configuration > RSS Feeds > RSS Config]]></tooltip>
+                        </rss>
+                    </fields>
+                </footer_links>
+				<customer_navigation translate="label">
+                    <label>Customer Navigation</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<account_dashboard translate="label">
+                            <label>Account Dashboard</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </account_dashboard>
+						<account_information translate="label">
+                            <label>Account Information</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </account_information>
+						<address_book translate="label">
+                            <label>Address Book</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </address_book>
+						<my_orders translate="label">
+                            <label>My Orders</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </my_orders>
+						<billing_agreements translate="label">
+                            <label>Billing Agreements</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </billing_agreements>
+						<recurring_profiles translate="label">
+                            <label>Recurring Profiles</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </recurring_profiles>
+						<my_product_reviews translate="label">
+                            <label>My Product Reviews</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </my_product_reviews>
+						<my_tags translate="label">
+                            <label>My Tags</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </my_tags>
+						<my_wishlist translate="label">
+                            <label>My Wishlist</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </my_wishlist>
+						<my_applications translate="label">
+                            <label>My Applications</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>101</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </my_applications>
+						<my_downloadable_products translate="label">
+                            <label>My Downloadable Products</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </my_downloadable_products>
+						<newsletter_subscriptions translate="label">
+                            <label>Newsletter Subscriptions</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </newsletter_subscriptions>
+						<logout translate="label">
+                            <label>Log Out</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_noyes</source_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<tooltip><![CDATA[Enabling this option will add 'Log Out' link at the bottom of Customer Navigation.]]></tooltip>
+                        </logout>
+						<enterprise_edition translate="label">
+                            <label>Enterprise Edition Only</label>
+                            <frontend_model>xmllinks/system_config_heading</frontend_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                        </enterprise_edition>
+						<store_credit translate="label">
+                            <label>Store Credit</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </store_credit>
+						<gift_card translate="label">
+                            <label>Gift Card</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </gift_card>
+						<gift_registry translate="label">
+                            <label>Gift Registry</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </gift_registry>
+						<reward_points translate="label">
+                            <label>Reward Points</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>180</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </reward_points>
+						<my_invitations translate="label">
+                            <label>My Invitations</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>xmllinks/system_config_source_yesno</source_model>
+                            <sort_order>190</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </my_invitations>
+                    </fields>
+                </customer_navigation>
+				<catalog_navigation translate="label">
+                    <label>Catalog Navigation</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <home_active translate="label">
+                            <label>Enable Homepage Link</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </home_active>
+						<home_label translate="label">
+                            <label>Homepage Link Label</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<depends><home_active>1</home_active></depends>
+							<tooltip><![CDATA[If Label is left empty, 'Home' label will be used.]]></tooltip>
+                        </home_label>
+                    </fields>
+                </catalog_navigation>
+            </groups>
+        </xmllinks>
+    </sections>
+</config>

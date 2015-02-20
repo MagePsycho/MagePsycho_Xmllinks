@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<default>
+
+		<reference name="top.menu">
+			<action method="unsetChild"><child>catalog.topnav</child></action>
+			<block type="catalog/navigation" name="catalog.topnav.xmllinks" template="catalog/navigation/top.phtml"/>
+        </reference>
+
+		<reference name="catalog.topnav.xmllinks">
+			<action method="setTemplate" ifconfig="xmllinks/catalog_navigation/home_active"><template>xmllinks/catalog/navigation/top.phtml</template></action>
+		</reference>
+
+		<reference name="top.links">
+			<action method="removeLinkByUrl" ifconfig="xmllinks/top_links/my_account"><url helper="customer/getAccountUrl"/></action>
+			<action method="removeLinkByUrl" ifconfig="xmllinks/top_links/my_cart"><url helper="checkout/url/getCartUrl" /></action>
+			<action method="removeLinkByUrl" ifconfig="xmllinks/top_links/checkout"><url helper="xmllinks/getUrl"><url>checkout</url></url></action>
+		</reference>
+
+		<reference name="wishlist_link">
+            <action method="setTemplate" ifconfig="xmllinks/top_links/my_wishlist"><template>xmllinks/blank-link.phtml</template></action>
+        </reference>
+
+		<reference name="footer_links">
+            <action method="removeLinkByUrl" ifconfig="xmllinks/footer_links/sitemap"><url helper="catalog/map/getCategoryUrl" /></action>
+            <action method="removeLinkByUrl" ifconfig="xmllinks/footer_links/search_terms"><url helper="catalogsearch/getSearchTermUrl" /></action>
+            <action method="removeLinkByUrl" ifconfig="xmllinks/footer_links/advanced_search"><url helper="catalogsearch/getAdvancedSearchUrl" /></action>
+			<action method="removeLinkByUrl" ifconfig="xmllinks/footer_links/contact_us"><url helper="xmllinks/getUrl"><url>contacts</url></url></action>
+
+			<reference name="return_link">
+				<action method="setTemplate" ifconfig="xmllinks/footer_links/return_link"><template>xmllinks/blank-link.phtml</template></action>
+			</reference>
+			<action method="removeLinkByUrl" ifconfig="xmllinks/footer_links/rss"><url helper="xmllinks/getUrl"><url>rss</url></url></action>
+		</reference>
+
+		<reference name="footer">
+			<action method="unsetChild" ifconfig="xmllinks/footer_links/static_block_links"><name>cms_footer_links</name></action>
+		</reference>
+
+	</default>
+	<customer_account>
+        <reference name="customer_account_navigation">
+            <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/account_dashboard"><name>account</name></action>
+            <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/account_information"><name>account_edit</name></action>
+            <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/address_book"><name>address_book</name></action>
+            <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_orders"><name>orders</name></action>
+            <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_tags"><name>tags</name></action>
+            <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_wishlist"><name>wishlist</name></action>
+			<action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_applications"><name>OAuth Customer Tokens</name></action>
+
+            <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/recurring_profiles"><name>recurring_profiles</name></action>
+            <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/billing_agreements"><name>billing_agreements</name></action>
+            <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_downloadable_products"><name>downloadable_products</name></action>
+            <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_product_reviews"><name>reviews</name></action>
+            <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/newsletter_subscriptions"><name>newsletter</name></action>
+			<action method="addLink" translate="label" module="xmllinks" ifconfig="xmllinks/customer_navigation/logout" after="-"><name>logout</name><path>customer/account/logout</path><label>Log Out</label></action>
+
+			 <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/store_credit"><name>enterprise_customerbalance</name></action>
+			 <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/gift_card"><name>enterprise_giftcardaccount</name></action>
+			 <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/gift_registry"><name>giftregistry</name></action>
+			 <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/reward_points"><name>enterprise_reward</name></action>
+			 <action method="removeLinkByName" ifconfig="xmllinks/customer_navigation/my_invitations"><name>invitations</name></action>
+        </reference>
+    </customer_account>
+	<customer_logged_out>
+        <reference name="top.links">
+            <action method="removeLinkByUrl" ifconfig="xmllinks/top_links/login"><url helper="customer/getLoginUrl"/></action>
+        </reference>
+    </customer_logged_out>
+
+    <customer_logged_in>
+        <reference name="top.links">
+            <action method="removeLinkByUrl" ifconfig="xmllinks/top_links/login"><url helper="customer/getLogoutUrl"/></action>
+        </reference>
+    </customer_logged_in>
+</layout>
